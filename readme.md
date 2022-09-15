@@ -1,6 +1,6 @@
 # DseReviews
 
-A webapp running at the domain [dsereviews.live](https://dsereviews.live), written in django, using postgres as db, nginx as a reverse-proxy, fully deployable in docker with a single command.  
+A webapp running at the domain [dsereviews.live](https://dsereviews.live), written in django, using postgres as db, nginx as a reverse-proxy, fully deployable through docker-compose with a single command.  
 
 ### Docker dev environment deploy
 
