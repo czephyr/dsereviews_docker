@@ -2,7 +2,7 @@
 
 A webapp running at the domain [dsereviews.live](dsereviews.live), written in django, using postgres as db, nginx as a reverse-proxy, fully deployable in docker with a single command.  
 
-#### Docker dev environment deploy
+### Docker dev environment deploy
 
 To deploy the containers locally 
         
@@ -12,7 +12,7 @@ To stop the containers and delete the volumes
 
         docker-compose down -v
 
-##### Needed set up
+#### Needed set up
 
 Create an **.env.dev** file in the home folder of the project the content have to be the following env variables:
 * _needed by django_
@@ -43,7 +43,7 @@ Create an **.env.dev** file in the home folder of the project the content have t
         ADMIN_EMAIL=admin@admin.com _django superuser email_
 
 
-#### Docker production environment deploy
+### Docker production environment deploy
 
 To deploy the production on the nginx proxy 
         
@@ -53,7 +53,7 @@ To stop the containers and delete the volumes
 
         docker-compose -f docker-compose.prod.yml down -v
 
-##### Needed set up
+#### Needed set up
 
 Create an **.env.prod** file in the home folder of the project the content have to be the following env variables:
 
