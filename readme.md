@@ -14,7 +14,7 @@ To stop the containers and delete the volumes
 
 #### Needed set up
 
-Create an **.env.dev** file in the home folder of the project the content have to be the following env variables:
+Create an **.env.dev** file in the home folder of the project the content has to be the following env variables:
 * _needed by django_
 
         DEBUG=1 _debug variable to True, will load dev html error pages_ 
@@ -55,7 +55,7 @@ To stop the containers and delete the volumes
 
 #### Needed set up
 
-Create an **.env.prod** file in the home folder of the project the content have to be the following env variables:
+Create an **.env.prod** file in the home folder of the project:
 
         DEBUG=0 _debug variable to False, won't load dev html error pages_ 
         SECRET_KEY=yourkey _django secret key, important for production environment_
@@ -78,7 +78,7 @@ Create an **.env.prod** file in the home folder of the project the content have 
         ADMIN_PASSWORD=password _django superuser password_
         ADMIN_EMAIL=email@gmail.com _django superuser email_
 
-Create an **.env.prod.db** file in the home folder of the project the content have to be the following env variables:
+Create an **.env.prod.db** file in the home folder of the project:
 
         POSTGRES_USER=username
         POSTGRES_PASSWORD=password
