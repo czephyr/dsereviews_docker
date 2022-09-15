@@ -1,0 +1,48 @@
+version: '3.8'
+
+services:
+  web:
+    build:
+      context: ./webapp
+      dockerfile: Dockerfile.prod
+    command: gunicorn djangoapp.wsgi:application --bind 0.0.0.0:8000
+    volumes:
+      - static_volume:/home/webapp/web/staticfiles
+      - media_volume:/home/webapp/web/mediafiles
+    expose:
+      - 8000
+    env_file:
+      - ./.env.prod
+    depends_on:
+      - db
+  db:
+    image: postgres:13.0-alpine
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    env_file:
+      - ./.env.prod.db
+  nginx:
+    build: ./nginx
+    ports:
+      - 80:80
+      - 443:443
+    restart: always
+    volumes:
+      - static_volume:/home/webapp/web/staticfiles
+      - media_volume:/home/webapp/web/mediafiles
+      - ./certbot/www:/var/www/certbot/:ro
+      - ./certbot/conf/:/etc/nginx/ssl/:ro
+    depends_on:
+      - web
+  certbot:
+    image: certbot/certbot:latest
+    volumes:
+      - ./certbot/www:/var/www/certbot/:rw
+      - ./certbot/conf/:/etc/letsencrypt/:rw
+
+volumes:
+  postgres_data:
+  static_volume:
+  media_volume:
+  certs:
+  ssl:
