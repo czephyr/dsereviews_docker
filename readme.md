@@ -1,6 +1,8 @@
 # DseReviews
 
-A webapp running at the domain [dsereviews.live](https://dsereviews.live), hosted on a remote Ubuntu vm, written in django, using postgres as db, nginx as a reverse-proxy, fully deployable through docker-compose with a single command.  
+An SSL certified webapp running at the domain [dsereviews.live](https://dsereviews.live), hosted on a remote Ubuntu vm, written in django, using postgres as db, nginx as a reverse-proxy, fully deployable through docker-compose with a single command.  
+
+The platform allows the registration, and confirmation through mail, to unimi students in order to post reviews of the degree courses.
 
 ### Docker dev environment deploy
 
